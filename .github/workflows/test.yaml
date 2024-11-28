@@ -12,6 +12,7 @@ on:
 jobs:
   print-input-based-on-workflow-on-type:
     runs-on: ubuntu-latest
+    needs: ["wait-for-me"]
     steps:
       - name: How to detect that you run on PR
         if: "${{ github.event.inputs.message == '' }}"
